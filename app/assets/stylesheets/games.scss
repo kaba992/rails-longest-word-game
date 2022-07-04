@@ -1,0 +1,389 @@
+// Place all the styles related to the Games controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@600&display=swap');
+@import "bootstrap/scss/bootstrap";
+
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.container {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 8rem;
+  height: 100%;
+  width: 100%;
+}
+
+.wrapper_score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+
+}
+
+form {
+  width: 100%;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+ul {
+  list-style: none;
+}
+
+.letters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4vw;
+}
+
+.letters li {
+  margin: 3rem 1rem;
+  background-color: #537895;
+  background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+  text-align: center;
+  width: 4.5vw;
+  // height: 70px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 8px
+}
+
+h1 {
+  font-family: 'Antonio', sans-serif;
+  font-size: 5rem;
+}
+
+p {
+  font-size: 2rem;
+}
+
+
+#new_question {
+  width: 40%;
+  height: 35%;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding: 0.4rem;
+  margin-right: 0.5rem;
+}
+
+.btn {
+  font-size: 1.5rem;
+  background-color: #537895 !important;
+  background-image: linear-gradient(315deg, #537895 0%, #09203f 74%) !important;
+  border-radius: 0.25rem;
+}
+
+.reset {
+  margin-top: 2rem;
+}
+
+.input_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.score {
+  font-size: 2.5rem;
+}
+.langues{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+.langues img{
+  width:20%;
+  height: auto;
+}
+
+
+
+@keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+.background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background: #0040C1;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.background li {
+  position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  border: solid 1px #0039ad;
+  color: transparent;
+  transform-origin: top left;
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  animation: cube 7s ease-in forwards infinite;
+}
+
+undefined .background li:nth-child(0) {
+  animation-delay: 0s;
+  left: 14vw;
+  top: 23vh;
+}
+
+.background li:nth-child(1) {
+  animation-delay: 2s;
+  left: 89vw;
+  top: 94vh;
+}
+
+.background li:nth-child(2) {
+  animation-delay: 4s;
+  left: 55vw;
+  top: 66vh;
+}
+
+.background li:nth-child(3) {
+  animation-delay: 6s;
+  left: 33vw;
+  top: 76vh;
+  border-color: #0046d4;
+}
+
+.background li:nth-child(4) {
+  animation-delay: 8s;
+  left: 73vw;
+  top: 35vh;
+  border-color: #0046d4;
+}
+
+.background li:nth-child(5) {
+  animation-delay: 10s;
+  left: 27vw;
+  top: 5vh;
+  border-color: #0046d4;
+}
+
+@media (max-width: 389px) {
+  .wrapper {
+    margin-top: 2rem;
+    justify-content: center;
+  }
+
+  #new_question {
+    width: 80%;
+    border-radius: 0.25rem;
+  }
+
+  form {
+    width: 100%;
+    text-align: center;
+    padding-top: 1rem;
+  }
+
+  .letters {
+    font-size: 4vw;
+    align-self: end;
+  }
+
+  .letters li {
+    margin: 2rem 0.3rem;
+    padding: 0px;
+    width: 7vw;
+    font-size: 2rem;
+
+  }
+
+  h1 {
+    font-family: 'Antonio', sans-serif;
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  .score {
+    font-size: 2.5rem;
+  }
+
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 390px) and (max-width: 767.98px) {
+
+  .wrapper {
+    margin-top: 0;
+    justify-content: center;
+  }
+
+  form {
+    width: 100%;
+    text-align: center;
+    padding-top: 2rem;
+  }
+
+  #new_question {
+    width: 80%;
+    height: 35%;
+
+  }
+
+  .letters {
+    font-size: 4vw;
+    align-self: end;
+  }
+
+  .letters li {
+    margin: 2rem 0.3rem;
+    width: 7vw;
+    font-size: 2.3rem;
+    padding: 1px;
+
+  }
+
+  h1 {
+    font-family: 'Antonio', sans-serif;
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+
+  .score {
+    font-size: 2.5rem;
+  }
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+  form {
+    width: 100%;
+    text-align: center;
+  }
+
+  .wrapper .wrapper_score {
+    margin-top: 0;
+  }
+
+  .letters {
+    font-size: 4vw;
+    padding: 0;
+  }
+
+  .letters li {
+    margin: 8rem 0.5rem;
+    width: 8vw;
+    font-size: 5rem;
+    padding: 0px;
+
+  }
+
+  #new_question {
+    width: 80%;
+    height: 35%;
+    font-size: 2.5rem;
+  }
+
+  .btn {
+    font-size: 2.5rem;
+  }
+
+  h1 {
+    font-family: 'Antonio', sans-serif;
+    font-size: 5rem;
+  }
+
+  p {
+    font-size: 2rem;
+  }
+
+  .score {
+    font-size: 3rem;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+  .wrapper{
+    margin-top: 12rem;
+  }
+  form {
+    width: 100%;
+    text-align: center;
+    padding-top: 2rem;
+  }
+
+  .letters {
+    font-size: 4vw;
+  }
+
+  .letters li {
+    margin: 3rem 1rem;
+
+    width: 6vw;
+
+  }
+
+  h1 {
+    font-family: 'Antonio', sans-serif;
+    font-size: 5rem;
+  }
+
+  p {
+    font-size: 2rem;
+  }
+
+  .score {
+    font-size: 2.5rem;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) { ... }

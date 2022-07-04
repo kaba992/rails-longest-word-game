@@ -1,0 +1,24 @@
+<div class="container">
+  <div class=" wrapper_score">
+  <ul class="background">
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+</ul>
+
+      <%if @included%>
+      <%if @french_word%>
+           <p class="score">🎉Félicitaions! <strong><%=@fr_word%></strong> est un mot fracais valide, ton score est <strong><%=@result.round(2)%></strong> 🎉</p>
+         <%else%>
+         <p class="score">Eh <strong><%=@fr_word%> </strong>n'est pas très francais, Ton score est <strong>0</strong> 🤮</p>
+       <% end%>
+       <%else%>
+         <p class="score">Sérieusement? <%=@fr_word%> n'est pas dans la grille! <strong>Suis la règle!</strong></p>
+     <%end%>
+
+   <button class ="btn btn-primary"><%=link_to "Rejouer", french_path %></button>
+  </div>
+</div>

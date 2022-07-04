@@ -1,0 +1,34 @@
+<div class="container">
+<div class="wrapper">
+<ul class="background">
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+</ul>
+  <h1>Bienvenue dans le jeu du mot le plus long!</h1>
+  <p>Rentrez le mot franais le plus long que vous connaissez en utilisant la grille ci-dessous.</p>
+  <ul class="letters">
+    <% @letters.each do |letter| %>
+      <li><%= letter %></li>
+    <% end %>
+  </ul>
+  <div class="langues">
+   <%=link_to image_tag('france',:alt => "french flag"), french_path%>
+   <%=link_to image_tag('royaume-uni', :alt => "english flag"), english_path%>
+  </div>
+  <form action="/frenchscore">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :letters, @letters %>
+  <p>A vous de jouer!</p>
+  <div class="input_wrapper">
+    <label for="english" class ="word"></label>
+    <input type="text" name="fr_word" id="new_question" required>
+    <input type="submit" value="Play" class ="btn btn-primary">
+  </div>
+  </form>
+  <button class="btn reset"> <%=link_to "Réinitialiser la grille", english_path%></button>
+</div>
+</div>

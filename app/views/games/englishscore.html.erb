@@ -1,0 +1,24 @@
+<div class="container">
+  <div class=" wrapper_score">
+  <ul class="background">
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+</ul>
+
+      <%if @included%>
+      <%if @english_word%>
+           <p class="score">🎉Congratulations! <strong><%=@en_word%></strong> is a valid English word, Your score is <strong><%=@result.round(2)%></strong> 🎉</p>
+         <%else%>
+         <p class="score">Eh <strong><%=@en_word%> </strong>est pas très English word,Your score is <strong>0</strong> 🤮</p>
+       <% end%>
+       <%else%>
+         <p class="score">Kiding me? <%=@en_word%> is not in the grid! <strong>Cheater</strong></p>
+     <%end%>
+
+   <button class ="btn btn-primary"><%=link_to "Play again", english_path %></button>
+  </div>
+</div>

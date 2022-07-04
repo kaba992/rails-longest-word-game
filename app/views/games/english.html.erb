@@ -1,0 +1,34 @@
+<div class="container">
+<div class="wrapper">
+<ul class="background">
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+</ul>
+  <h1>Welcome to the Longest Word Game!</h1>
+  <p>Enter the longest English word you know using the letters from the grid down below!</p>
+  <ul class="letters">
+    <% @letters.each do |letter| %>
+      <li><%= letter %></li>
+    <% end %>
+  </ul>
+  <div class="langues">
+    <%=link_to image_tag('france',:alt => "french flag"), french_path%>
+   <%=link_to image_tag('royaume-uni', :alt => "english flag"), english_path%>
+  </div>
+  <form action="/englishscore">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :letters, @letters %>
+  <p>Your turn let's go!</p>
+  <div class="input_wrapper">
+    <label for="english" class ="word"></label>
+    <input type="text" name="en_word" id="new_question" required>
+    <input type="submit" value="Play" class ="btn btn-primary">
+  </div>
+  </form>
+  <button class="btn reset"> <%=link_to "Reset grid", english_path%></button>
+</div>
+</div>
